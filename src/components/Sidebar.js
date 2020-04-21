@@ -267,7 +267,7 @@ const BoxShadowSection = props => {
                  />
             </span>
             <span className="color-box">
-                <span className="section__header section__header--inline">Box Shadow Color:</span>
+                <span className="section__header section__header--inline">Background Color:</span>
                 <ColorPicker
                     color={boxColor}
                     handleChange={color => handleColorChange(color, setBoxColor)}
