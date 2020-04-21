@@ -18,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: calc(100vw - 240px);
+    width: calc(100vw - 427px);
     background: var(--primary-light);
     overflow:hidden;
 }

@@ -1,8 +1,8 @@
 .Editor{
     /* border: solid; */
     height: 100vh;
-    width: 25%;
-    min-width: fit-content;
+    width: 427px;
+    /* min-width: fit-content; */
     color: var(--text-on-primary);
     background: var(--primary);
     overflow: auto

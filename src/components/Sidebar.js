@@ -195,12 +195,12 @@ const ColorPicker = props => {
                 cursor: 'pointer',
             },
             popover: {
-                position: 'absolute',
+                position: 'relative',
                 zIndex: '2',
             },
             cover: {
                 position: 'fixed',
-                top: '0px',
+                top: '0',
                 right: '0px',
                 bottom: '0px',
                 left: '0px',
@@ -281,8 +281,6 @@ const BoxShadowSection = props => {
 const Sidebar = () => {
 
     const {width, setWidth} = useContext(StyleContext)
-
-   
 
     return (
         <div className="Editor">
