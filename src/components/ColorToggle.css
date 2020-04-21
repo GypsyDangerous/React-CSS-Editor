@@ -1,0 +1,22 @@
+.toggle{
+    position: fixed;
+    border:none;
+    outline: none;
+    background:none;
+    top: 0;
+    right: 0;
+    width: 125px;
+    height: 125px;
+    color: var(--text-on-primary);
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+    background: var(--primary-dark);
+    cursor: pointer;
+}
+
+.toggle svg{
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    width: 35px;
+    height: 35px;
+}

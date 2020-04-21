@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+    --primary: #212121;
+    --primary-dark: black;
+    --primary-light: #484848;
+
+    --secondary: #8fa3ad;
+    --secondary-dark: #61747e;
+    --secondary-light: #bfd4df;
+
+    --text-on-primary: white;
+    --text-on-secondary: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.light{
+    --primary: #005f63;
+    --primary-dark: #003539;
+    --primary-light: #428d90;
+
+    --secondary: #37474f;
+    --secondary-dark: #102027;
+    --secondary-light: #62727b;
+
+    --text-on-primary: white;
+    --text-on-secondary: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App{
+    display: flex;
+    font-family: 'Roboto Mono', monospace;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.App *{
+    transition: inherit;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.MuiInputBase-root{
+    color: var(--text-on-primary) !important;
+    
+}
+
+.MuiFormLabel-root{
+    color: var(--text-on-primary) !important;
+}
+
+.option{
+background: var(--primary-light) !important;
+border: none;
+outline:none;
 }

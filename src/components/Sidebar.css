@@ -1,0 +1,38 @@
+.Editor{
+    /* border: solid; */
+    height: 100vh;
+    width: 25%;
+    min-width: fit-content;
+    color: var(--text-on-primary);
+    background: var(--primary);
+    overflow: auto
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+.section__header{
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+}
+
+.section__header--inline{
+    width: fit-content;
+
+}
+
+.slider{
+    color: var(--secondary-light) !important;
+}
+
+.color-box{
+    margin-top: .5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* height: fit-content; */
+    align-items: center;
+}
