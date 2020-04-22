@@ -17,6 +17,8 @@ body{
 
     --text-on-primary: white;
     --text-on-secondary: black;
+
+    --normal-font-size: 13px;
 }
 
 .light{

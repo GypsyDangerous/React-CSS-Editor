@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useMemo} from 'react';
 import './App.css';
 import Sidebar from './components/Sidebar';
 import Display from './components/Display';
@@ -16,33 +16,41 @@ function App() {
   const [boxColor, setBoxColor] = useState()
 
   useEffect(() => {
-    setBoxColor(!colorMode ? "#61747e" : "#102027")
+    setBoxColor(c => !c ? "#61747e" : "#102027")
   }, [])
+
+  useEffect(() => {
+    const mode = localStorage.getItem("ColorMode")
+    setColorMode(mode==="true")
+  },[])
+
+  const providerValues = useMemo(() => ({
+    borderRadius,
+    setBorderRadius,
+    unit,
+    setUnit,
+    colorMode,
+    setColorMode,
+    width,
+    setWidth,
+    boxShadow,
+    setBoxShadow,
+    boxShadowColor,
+    setBoxShadowColor,
+    setBoxColor,
+    boxColor
+  }), [borderRadius,unit,colorMode,width,boxShadow,boxShadowColor,boxColor])
+
 
   return (
     <StyleContext.Provider
-      value={{
-        borderRadius,
-        setBorderRadius,
-        unit,
-        setUnit,
-        colorMode,
-        setColorMode,
-        width,
-        setWidth,
-        boxShadow,
-        setBoxShadow,
-        boxShadowColor,
-        setBoxShadowColor,
-        setBoxColor,
-        boxColor
-      }}
+      value={providerValues}
     >
-      <div className={`App ${colorMode && "light"}`}>
+      <main className={`App ${colorMode && "light"}`}>
         <ColorToggle/>
         <Sidebar/>
         <Display/>
-      </div>
+      </main>
     </StyleContext.Provider>
   );
 }

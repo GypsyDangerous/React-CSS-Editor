@@ -3,9 +3,9 @@
     height: 600px;
     background: var(--secondary-dark);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .copy{
@@ -28,5 +28,61 @@
     color: var(--text-on-secondary);
     max-width: calc(100% - 3rem);
     padding: 1.5rem;
-    font-size: 13px;
+    font-size: var(--normal-font-size);
+}
+
+.my-node-enter {
+  opacity: 0;
+  transform: translateY(50px) scale(0); 
+}
+
+.my-node-enter-active {
+  opacity: 1;
+  transform: translateY(0px) scale(1);
+  transition: 1000ms;
+}
+
+.my-node-exit {
+  opacity: 1;
+  transform: translateY(0px) scale(1);
+}
+
+.my-node-exit-active {
+  opacity: 0;
+  transform: translateY(50px) scale(0);
+  transition: 1000ms;
+}
+
+.copied-popup{
+    background: var(--primary-light);
+    color: var(--text-on-primary);
+    padding: 1rem;
+    border-radius: 1rem;
+    position: relative;
+    top: 15px
+}
+
+
+.triangle{
+
+    width: 0px;
+    border-width: 15px;
+    border-color: var(--primary-light) #0000 #0000 #0000;
+    border-style: solid;
+    position: relative;
+    top: 15px
+}
+
+.copy-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-container{
+    height: 200px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+
 }

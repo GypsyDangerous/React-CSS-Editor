@@ -8,7 +8,6 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 import Input from '@material-ui/core/Input';
-// import VolumeUp from '@material-ui/icons/VolumeUp';
 import {StyleContext} from "../contexts/styleContext"
 import { ChromePicker} from "react-color"
 import reactCSS from 'reactcss'
@@ -17,9 +16,6 @@ const useStyles = makeStyles({
     root: {
         width: 250,
         marginLeft: 15
-    },
-    input: {
-        width: 42,
     },
     select: {
         color: "white"
@@ -61,7 +57,6 @@ const InputSlider = props => {
     const classes = useStyles();
     const [value, setValue] = useState(props.value || 0);
     
-
     const handleSliderChange = (event, newValue) => {
         setValue(newValue);
         props.onChange(newValue)
@@ -133,7 +128,7 @@ const BorderRadiusSection = props => {
 
 
     return (
-        <div className="section" id={props.id}>
+        <section className="section" id={props.id}>
             <div className="section__header">Border Radius</div>
             <label htmlFor="use-all-corners">Set Individual values for each corner</label>
             <Switch
@@ -171,7 +166,7 @@ const BorderRadiusSection = props => {
                 </> :
                 <InputSlider className="slider" title="Radius" onChange={v => setBorderRadius([v,v,v,v])} min={0} max={400}/>
             }
-        </div>
+        </section>
     )
 }
 
@@ -247,12 +242,11 @@ const BoxShadowSection = props => {
             colorStr = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`
         }
 
-        // do something with colorStr...
         func(colorStr)
     } 
 
     return (
-        <div className="section">
+        <section className="section">
             <div className="section__header">Box Shadow</div>
             {["Horizontal Position", "Vertical Position", "Blur", "Spread"].map((title, i) => (
                 <>
@@ -273,7 +267,7 @@ const BoxShadowSection = props => {
                     handleChange={color => handleColorChange(color, setBoxColor)}
                 />
             </span>
-        </div>
+        </section>
     )
 }
 
@@ -283,14 +277,14 @@ const Sidebar = () => {
     const {width, setWidth} = useContext(StyleContext)
 
     return (
-        <div className="Editor">
-            <div className="section">
+        <nav className="Editor">
+            <section className="section">
 
                 <InputSlider title="Width" value={width} onChange={v => setWidth(v)} min={400} max={900} />
-            </div>
+            </section>
             <BorderRadiusSection id="section1"/>
             <BoxShadowSection/>
-        </div>
+        </nav>
     );
 }
 
