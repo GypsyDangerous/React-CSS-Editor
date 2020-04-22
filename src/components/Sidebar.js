@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useCallback } from 'react';
 import "./Sidebar.css"
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -126,6 +126,12 @@ const BorderRadiusSection = props => {
         setBorderRadius(copy)
     }
 
+    const cornerToggle = useCallback(e => {
+        setAllCorners(e.target.checked)
+        if(!e.target.checked){
+            setBorderRadius(r => r.map(v=>r[0]))
+        }
+    }, [])
 
     return (
         <section className="section" id={props.id}>
@@ -133,7 +139,7 @@ const BorderRadiusSection = props => {
             <label htmlFor="use-all-corners">Set Individual values for each corner</label>
             <Switch
                 checked={allCorners}
-                onChange={e => setAllCorners(e.target.checked)}
+                onChange={cornerToggle}
                 name="checkedB"
                 id="use-all-corners"
                 inputProps={{ 'aria-label': 'primary checkbox' }}
@@ -161,7 +167,7 @@ const BorderRadiusSection = props => {
                         <InputSlider key={title} min={0} title={title} max={400} value={borderRadius[i]} onChange={value => modifyRaddi(i, value)}/>
                     ))}
                 </> :
-                <InputSlider className="slider" title="Radius" onChange={v => setBorderRadius([v,v,v,v])} min={0} max={400}/>
+                <InputSlider className="slider" value={borderRadius[0]} title="Radius" onChange={v => setBorderRadius([v,v,v,v])} min={0} max={400}/>
             }
         </section>
     )
