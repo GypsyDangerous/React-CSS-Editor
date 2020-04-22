@@ -54,7 +54,11 @@ body{
 }
 
 .option{
-background: var(--primary-light) !important;
-border: none;
-outline:none;
+    background: var(--primary-light) !important;
+    border: none;
+    outline:none;
+}
+
+body{
+    overflow: hidden;
 }

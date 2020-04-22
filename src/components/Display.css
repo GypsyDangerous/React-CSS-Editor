@@ -31,30 +31,30 @@
     font-size: var(--normal-font-size);
 }
 
-.my-node-enter {
+.copy-popup-enter {
   opacity: 0;
   transform: translateY(50px) scale(0); 
 }
 
-.my-node-enter-active {
+.copy-popup-enter-active {
   opacity: 1;
   transform: translateY(0px) scale(1);
   transition: 1000ms;
 }
 
-.my-node-exit {
+.copy-popup-exit {
   opacity: 1;
   transform: translateY(0px) scale(1);
 }
 
-.my-node-exit-active {
+.copy-popup-exit-active {
   opacity: 0;
   transform: translateY(50px) scale(0);
   transition: 1000ms;
 }
 
 .copied-popup{
-    background: var(--primary-light);
+    background: var(--primary);
     color: var(--text-on-primary);
     padding: 1rem;
     border-radius: 1rem;
@@ -67,7 +67,7 @@
 
     width: 0px;
     border-width: 15px;
-    border-color: var(--primary-light) #0000 #0000 #0000;
+    border-color: var(--primary) #0000 #0000 #0000;
     border-style: solid;
     position: relative;
     top: 15px

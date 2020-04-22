@@ -134,7 +134,6 @@ const BorderRadiusSection = props => {
             <Switch
                 checked={allCorners}
                 onChange={e => setAllCorners(e.target.checked)}
-                // color="primary"
                 name="checkedB"
                 id="use-all-corners"
                 inputProps={{ 'aria-label': 'primary checkbox' }}
@@ -155,8 +154,6 @@ const BorderRadiusSection = props => {
                 <option className="option" key={"rem"} value="rem">REM</option>
                 <option className="option" key={"em"} value="em">EM</option>
             </NativeSelect>
-            {/* <FormHelperText>Label + placeholder</FormHelperText> */}
-
 
             {allCorners ?
                 <>
@@ -250,7 +247,7 @@ const BoxShadowSection = props => {
             <div className="section__header">Box Shadow</div>
             {["Horizontal Position", "Vertical Position", "Blur", "Spread"].map((title, i) => (
                 <>
-                    <InputSlider className="slider" title={title} onChange={v => modifyShadow(i, v)} min={title === "Blur"?0:-200} max={200} />
+                    <InputSlider className="slider" title={title} value={boxShadow[i]} onChange={v => modifyShadow(i, v)} min={title === "Blur"?0:-200} max={200} />
                 </>
             ))}
             <span className="color-box">
@@ -279,7 +276,6 @@ const Sidebar = () => {
     return (
         <nav className="Editor">
             <section className="section">
-
                 <InputSlider title="Width" value={width} onChange={v => setWidth(v)} min={400} max={900} />
             </section>
             <BorderRadiusSection id="section1"/>

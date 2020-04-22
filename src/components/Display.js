@@ -31,7 +31,6 @@ const Display = props => {
 
     const onCopy = useCallback(() => {
         setCopied(true)
-        // settimeout to make copied false
         setTimeout(() => {
             setCopied(false)
         }, 5000)
@@ -42,7 +41,7 @@ const Display = props => {
             <div style={style} className="item">
                 <div className="grid-container">
                     <div>
-                        <CSSTransition in={copied} timeout={1000} unmountOnExit classNames="my-node">
+                        <CSSTransition in={copied} timeout={1000} unmountOnExit classNames="copy-popup">
                                 <span className="copy-container">
                                     <div className="copied-popup">Copied!</div>
                                     <div className="triangle"></div>
